@@ -20,12 +20,6 @@ public class Product extends PersistentObject {
 	private static final String T_JSON_CONSTANT = "t";
 	private static final String TYPE_JSON_CONSTANT = "type";
 
-	private static final String P_JSON_CONSTANT = "p";
-	private static final String PRICE_JSON_CONSTANT = "price";
-
-	private static final String CUR_JSON_CONSTANT = "cur";
-	private static final String CURRENCY_JSON_CONSTANT = "currency";
-
 	private static final String DSC_JSON_CONSTANT = "dsc";
 	private static final String DESCRIPTION_JSON_CONSTANT = "description";
 
@@ -54,16 +48,6 @@ public class Product extends PersistentObject {
 	@Indexed
 	protected int type;
 
-	@JsonProperty(P_JSON_CONSTANT)
-	@Field(PRICE_JSON_CONSTANT)
-	@Indexed
-	protected double price;
-
-	@JsonProperty(CUR_JSON_CONSTANT)
-	@Field(CURRENCY_JSON_CONSTANT)
-	@Indexed
-	protected String currency;
-
 	@JsonProperty(DSC_JSON_CONSTANT)
 	@Field(DESCRIPTION_JSON_CONSTANT)
 	protected String description;
@@ -88,14 +72,11 @@ public class Product extends PersistentObject {
 	@Field(IMAGESIDS_JSON_CONSTANT)
 	protected Set<String> imageIdSet;
 
-	public Product(String id, String name, int type, double price,
-			String currency, Producer producer) {
+	public Product(String id, String name, int type, Producer producer) {
 		super(id);
 		this.type = type;
 		this.producer = producer;
 		this.name = name;
-		this.price = price;
-		this.currency = currency;
 	}
 
 	public String getName() {
@@ -104,22 +85,6 @@ public class Product extends PersistentObject {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	public String getCurrency() {
-		return currency;
-	}
-
-	public void setCurrency(String currency) {
-		this.currency = currency;
 	}
 
 	public String getDescription() {

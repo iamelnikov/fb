@@ -1,4 +1,4 @@
-package com.ee.fb.domain.agreement;
+package com.ee.fb.domain.agreement.impl;
 
 import com.ee.fb.domain.company.Consumer;
 import com.ee.fb.domain.company.Producer;

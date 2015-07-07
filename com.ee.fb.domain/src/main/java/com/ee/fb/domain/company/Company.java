@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.ee.fb.domain.PersistentObject;
+import com.ee.fb.domain.company.RusEGRULRequisits.RusEGRULRequisitesEnum;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Document(collection = "COMPANY")
@@ -59,5 +60,8 @@ public abstract class Company extends PersistentObject {
 		this.shortName = shortName;
 	}
 	
-
+	public String serialize(String[] properties, RusEGRULRequisitesEnum[] requisits){
+		//TODO
+		return null;
+	};
 }

@@ -1,8 +1,11 @@
 package com.ee.fb.domain.company;
 
+import java.util.Map;
+
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.ee.fb.domain.Constants;
 import com.ee.fb.domain.PersistentObject;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -15,6 +18,24 @@ public class RusEGRULRequisits extends PersistentObject {
 	private static final String OKATO_JSON_CONSTANT = "okato";
 	private static final String OKOPF_JSON_CONSTANT = "okopf";
 	private static final String OKVED_JSON_CONSTANT = "okved";
+
+	static enum RusEGRULRequisitesEnum {
+		INN(INN_JSON_CONSTANT), KPP(KPP_JSON_CONSTANT), OKPO(OKPO_JSON_CONSTANT), 
+		OGRN(OGRN_JSON_CONSTANT), OKATO(OKATO_JSON_CONSTANT), 
+		OKOPF(OKOPF_JSON_CONSTANT), OKVED(OKVED_JSON_CONSTANT);
+		
+		private String code;
+		
+		private RusEGRULRequisitesEnum(String code) {
+			this.code = code;
+		}; 
+		
+		public String getCode(){
+			return code;
+		}
+	}
+	
+	private Map<RusEGRULRequisitesEnum, String> requisitesMap ;
 
 	@JsonProperty(INN_JSON_CONSTANT)
 	@Field(INN_JSON_CONSTANT)
@@ -117,6 +138,22 @@ public class RusEGRULRequisits extends PersistentObject {
 
 	public void setOkved(String okved) {
 		this.okved = okved;
+	}
+	
+	public String serialize(RusEGRULRequisitesEnum[] order){
+		if (order!=null) {
+			StringBuffer sb = new StringBuffer();
+			for (RusEGRULRequisitesEnum o: order) {
+				String val = this.requisitesMap.get(o);
+				if (val!=null && val.trim().length()>0) {
+					if (sb.length()>0)
+						sb.append(", ");
+					sb.append(o.code).append(" ").append(val);
+				}
+			}
+			return sb.toString();
+		}
+		return Constants.EMPTY_STRING;
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.ee.fb.domain.agreement;
+package com.ee.fb.domain.agreement.impl;
 
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Field;
