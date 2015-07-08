@@ -15,7 +15,7 @@ public class FoodProduct extends Product {
 
 	public FoodProduct(String id, String name, double price, String currency,
 			Producer producer) {
-		super(id, name, foodProductType, price, currency, producer);
+		super(id, name, foodProductType, producer);
 	}
 
 }

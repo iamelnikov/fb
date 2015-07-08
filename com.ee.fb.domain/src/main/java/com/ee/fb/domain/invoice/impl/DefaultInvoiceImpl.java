@@ -3,12 +3,9 @@ package com.ee.fb.domain.invoice.impl;
 import java.util.Collection;
 import java.util.Date;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import com.ee.fb.domain.PersistentObject;
 import com.ee.fb.domain.company.Company;
 import com.ee.fb.domain.company.Consumer;
-import com.ee.fb.domain.company.Producer;
 import com.ee.fb.domain.invoice.Invoice;
 import com.ee.fb.domain.invoice.InvoiceProducerInfo;
 import com.ee.fb.domain.invoice.InvoiceShipperInfo;
@@ -53,12 +50,41 @@ public class DefaultInvoiceImpl extends PersistentObject implements Invoice{
 	
 	protected Collection<ProductCatalogItem> items;
 
-	public DefaultInvoiceImpl(String id, Date date, String number, InvoiceProducerInfoProducer producerInfo,
+	public DefaultInvoiceImpl(String id, Date date, String number, InvoiceProducerInfo producerInfo,
 			Consumer consumer, Collection<ProductCatalogItem> items) {
 		super(id);
 		this.number = number;
 		this.producerInfo = producerInfo;
 		this.items = items;
 	}
-	
+
+	@Override
+	public Date getDateOfPreparation() {
+		return this.dateOfPreparation;
+	}
+
+	@Override
+	public String getNumber() {
+		return this.number;
+	}
+
+	@Override
+	public InvoiceShipperInfo getInvoiceShipperInfo() {
+		return shipperInfo;
+	}
+
+	@Override
+	public Company getConsignment() {
+		return this.consignee;
+	}
+
+	@Override
+	public String getBillOfLading() {
+		return billOfLadingNumber;
+	}
+
+	@Override
+	public Company getPayer() {
+		return payer;
+	}
 }

@@ -1,14 +1,25 @@
 package com.ee.fb.domain.agreement.impl;
 
 import com.ee.fb.domain.agreement.AdditionalAgreement;
-import com.ee.fb.domain.company.Consumer;
-import com.ee.fb.domain.company.Producer;
+import com.ee.fb.domain.agreement.Agreement;
+import com.ee.fb.domain.agreement.AgreementConsumerInfo;
+import com.ee.fb.domain.agreement.AgreementProducerInfo;
 
-public class AdditionalAgreementImpl extends AbstractAgreement implements AdditionalAgreement{
+public class AdditionalAgreementImpl extends AbstractAgreement implements
+		AdditionalAgreement {
 
-	public AdditionalAgreementImpl(String id, Producer producer, Consumer consumer) {
-		super(id, producer, consumer);
-		// TODO Auto-generated constructor stub
+	private Agreement agreement;
+
+	public AdditionalAgreementImpl(String id,
+			AgreementProducerInfo producerInfo,
+			AgreementConsumerInfo consumerInfo, Agreement agreement) {
+		super(id, producerInfo, consumerInfo, null, null, null);
+		this.agreement = agreement;
+	}
+
+	@Override
+	public Agreement getAgreement() {
+		return agreement;
 	}
 
 }
