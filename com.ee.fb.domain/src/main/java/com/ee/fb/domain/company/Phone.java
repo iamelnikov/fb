@@ -3,11 +3,11 @@ package com.ee.fb.domain.company;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Document(collection = "PHONE")
-public class Phone extends PersistentObject{
+public class Phone extends PersistentObjectImpl{
 	
 	protected static final String T_JSON_PROPERTY = "t";
 	protected static final String TYPE_JSON_PROPERTY = "type";

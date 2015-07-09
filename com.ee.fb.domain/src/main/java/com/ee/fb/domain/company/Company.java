@@ -8,12 +8,12 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.ee.fb.domain.company.RusEGRULRequisits.RusEGRULRequisitesEnum;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Document(collection = "COMPANY")
-public abstract class Company extends PersistentObject {
+public abstract class Company extends PersistentObjectImpl {
 
 	private static final String FN_JSON_CONSTANT = "fn";
 	private static final String FULL_NAME_JSON_CONSTANT = "fullName";

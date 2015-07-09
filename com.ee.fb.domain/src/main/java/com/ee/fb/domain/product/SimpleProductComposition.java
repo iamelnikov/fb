@@ -7,10 +7,10 @@ import java.util.Set;
 
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class SimpleProductComposition extends PersistentObject {
+public class SimpleProductComposition extends PersistentObjectImpl {
 	
 	@JsonProperty("composition")
 	@Field("composition")

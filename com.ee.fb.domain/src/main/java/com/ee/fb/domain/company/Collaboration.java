@@ -6,10 +6,10 @@ import java.util.Set;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Collaboration extends PersistentObject {
+public class Collaboration extends PersistentObjectImpl {
 
 	protected static final String ADDRESS_JSON_CONSTANT = "a";
 	protected static final String PHONE_JSON_CONSTANT = "p";

@@ -8,12 +8,12 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.ee.fb.domain.company.Consumer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Document(collection = "CONSUMER_REQUEST")
-public class ConsumerRequest extends PersistentObject {
+public class ConsumerRequest extends PersistentObjectImpl {
 
 	private static final String C_JSON_PROPERTY_CONSTANT = "c";
 	private static final String CONSUMER_JSON_PROPERTY_CONSTANT = "consumer";

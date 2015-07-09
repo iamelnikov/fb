@@ -5,11 +5,11 @@ import java.util.Map;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.Constants;
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
+import com.ee.fb.core.Constants;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class RusEGRULRequisits extends PersistentObject {
+public class RusEGRULRequisits extends PersistentObjectImpl {
 
 	private static final String INN_JSON_CONSTANT = "inn";
 	private static final String KPP_JSON_CONSTANT = "kpp";

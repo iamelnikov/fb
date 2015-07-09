@@ -5,11 +5,11 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Document(collection = "LOCATION")
-public class Location extends PersistentObject{
+public class Location extends PersistentObjectImpl{
 
 	private static final String Z_JSON_PROPERTY = "z";
 	private static final String ZIPCODE_JSON_PROPERTY = "zipCode";

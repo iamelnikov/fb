@@ -5,11 +5,11 @@ import java.util.Date;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.ee.fb.domain.product.Product;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ProductOffer extends PersistentObject{
+public class ProductOffer extends PersistentObjectImpl{
 	
 	private static final String P_JSON_PROPERTY_CONSTANT = "p";
 	private static final String PRODUCT_JSON_PROPERTY_CONSTANT = "product";

@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.ee.fb.domain.agreement.Agreement;
 import com.ee.fb.domain.agreement.AgreementConsumerInfo;
 import com.ee.fb.domain.agreement.AgreementProducerInfo;
@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mongodb.gridfs.GridFSDBFile;
 
 @Document(collection = "AGREEMENT")
-public abstract class AbstractAgreement extends PersistentObject implements
+public abstract class AbstractAgreement extends PersistentObjectImpl implements
 		Agreement {
 
 	static enum AgreementState {

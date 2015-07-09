@@ -5,7 +5,6 @@ import com.ee.fb.domain.user.Person;
 
 public interface AgreementProducerInfo {
 
-	
 	public Producer getProducer();
 	public Person getPerson();
 }

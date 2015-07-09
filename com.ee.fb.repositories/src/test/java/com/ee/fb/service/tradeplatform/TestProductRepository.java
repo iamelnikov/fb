@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ee.fb.domain.company.Producer;
 import com.ee.fb.domain.product.Product;
+import com.ee.fb.repository.ProductRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

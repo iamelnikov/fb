@@ -4,11 +4,11 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Document(collection = "EMAIL")
-public class Email extends PersistentObject {
+public class Email extends PersistentObjectImpl {
 
 	protected static final String E_JSON_PROPERTY = "e";
 	protected static final String EMAIL_JSON_PROPERTY = "email";

@@ -1,13 +1,13 @@
 package com.ee.fb.domain.invoice;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.ee.fb.domain.product.Product;
 
 /**
  * 
  * @author ilya Единица товара из накладной
  */
-public class InvoiceProductItem extends PersistentObject {
+public class InvoiceProductItem extends PersistentObjectImpl {
 
 	/**
 	 * Товар

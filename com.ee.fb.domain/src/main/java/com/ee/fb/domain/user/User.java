@@ -1,11 +1,15 @@
 package com.ee.fb.domain.user;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.PersistentObject;
 
-public abstract class User extends PersistentObject {
+public class User extends com.ee.domain.mongo.user.User {
 
+	private Person person;
+	
 	public User(String id) {
 		super(id);
 	}
+	
+	public PersonGe
 
 }

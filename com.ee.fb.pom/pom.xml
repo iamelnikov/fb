@@ -36,9 +36,12 @@
 		<apache.commons.lang3.version>3.4</apache.commons.lang3.version>
 	</properties>
 	<modules>
+		<module>../com.ee.fb.core</module>
 		<module>../com.ee.fb.domain</module>
 		<module>../com.ee.fb.repositories</module>
+		<module>../com.ee.fb.service.user</module>
 		<module>../com.ee.fb.service.tradeplatform</module>
+		<module>../com.ee.fb.service.payment</module>
 	</modules>
 	<build>
 		<plugins>

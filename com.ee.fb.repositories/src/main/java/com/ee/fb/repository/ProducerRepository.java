@@ -1,4 +1,4 @@
-package com.ee.fb.service.tradeplatform;
+package com.ee.fb.repository;
 
 import java.util.List;
 

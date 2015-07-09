@@ -1,10 +1,10 @@
 package com.ee.fb.domain.invoice.impl;
 
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.ee.fb.domain.company.Producer;
-import com.ee.fb.domain.PersistentObject;
 import com.ee.fb.domain.invoice.InvoiceProducerInfo;
 
-public class DefaultInvoiceProducerInfo extends PersistentObject implements InvoiceProducerInfo{
+public class DefaultInvoiceProducerInfo extends PersistentObjectImpl implements InvoiceProducerInfo{
 
 	protected Producer producer;
 	

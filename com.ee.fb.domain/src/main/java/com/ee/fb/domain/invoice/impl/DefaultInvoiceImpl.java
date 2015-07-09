@@ -3,7 +3,7 @@ package com.ee.fb.domain.invoice.impl;
 import java.util.Collection;
 import java.util.Date;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.ee.fb.domain.company.Company;
 import com.ee.fb.domain.company.Consumer;
 import com.ee.fb.domain.invoice.Invoice;
@@ -16,7 +16,7 @@ import com.ee.fb.domain.product.ProductCatalogItem;
  * 
  */
 
-public class DefaultInvoiceImpl extends PersistentObject implements Invoice{
+public class DefaultInvoiceImpl extends PersistentObjectImpl implements Invoice{
 
 	/**
 	 *  Дата составления

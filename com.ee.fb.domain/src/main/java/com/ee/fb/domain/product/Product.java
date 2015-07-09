@@ -7,12 +7,12 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 import com.ee.fb.domain.company.Producer;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Document(collection = "PRODUCT")
-public class Product extends PersistentObject {
+public class Product extends PersistentObjectImpl {
 
 	private static final String N_JSON_CONSTANT = "n";
 	private static final String NAME_JSON_CONSTANT = "name";

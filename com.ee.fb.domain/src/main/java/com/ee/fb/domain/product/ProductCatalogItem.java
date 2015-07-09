@@ -2,9 +2,9 @@ package com.ee.fb.domain.product;
 
 import java.util.Date;
 
-import com.ee.fb.domain.PersistentObject;
+import com.ee.domain.mongo.PersistentObjectImpl;
 
-public class ProductCatalogItem extends PersistentObject{
+public class ProductCatalogItem extends PersistentObjectImpl{
 
 	private Product product;
 	private boolean available;
