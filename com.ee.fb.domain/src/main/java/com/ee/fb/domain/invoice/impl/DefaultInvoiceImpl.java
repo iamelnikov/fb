@@ -2,21 +2,23 @@ package com.ee.fb.domain.invoice.impl;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.function.Consumer;
 
-import com.ee.domain.mongo.PersistentObjectImpl;
-import com.ee.fb.domain.company.Company;
-import com.ee.fb.domain.company.Consumer;
-import com.ee.fb.domain.invoice.Invoice;
-import com.ee.fb.domain.invoice.InvoiceProducerInfo;
-import com.ee.fb.domain.invoice.InvoiceShipperInfo;
-import com.ee.fb.domain.product.ProductCatalogItem;
+import com.ee.domain.company.AbstractCompany;
+import com.ee.domain.company.Company;
+import com.ee.domain.invoice.Invoice;
+import com.ee.domain.invoice.InvoiceProducerInfo;
+import com.ee.domain.invoice.InvoiceShipperInfo;
+import com.ee.domain.mongo.document.DefaultMongoDocument;
+import com.ee.domain.product.ProductCatalogItemImpl;
+import com.mongodb.gridfs.GridFSDBFile;
 
 /**
  * Товарная накладная 
  * 
  */
 
-public class DefaultInvoiceImpl extends PersistentObjectImpl implements Invoice{
+public class DefaultInvoiceImpl extends DefaultMongoDocument implements Invoice<GridFSDBFile>{
 
 	/**
 	 *  Дата составления
@@ -41,17 +43,17 @@ public class DefaultInvoiceImpl extends PersistentObjectImpl implements Invoice{
 	/**
 	 * Грузополучатель
 	 */
-	protected Company consignee;
+	protected AbstractCompany consignee;
 	
 	/**
 	 * Номер товарной накладной
 	 */
 	protected String billOfLadingNumber;
 	
-	protected Collection<ProductCatalogItem> items;
+	protected Collection<ProductCatalogItemImpl> items;
 
 	public DefaultInvoiceImpl(String id, Date date, String number, InvoiceProducerInfo producerInfo,
-			Consumer consumer, Collection<ProductCatalogItem> items) {
+			Consumer<?> consumer, Collection<ProductCatalogItemImpl> items) {
 		super(id);
 		this.number = number;
 		this.producerInfo = producerInfo;
@@ -74,7 +76,7 @@ public class DefaultInvoiceImpl extends PersistentObjectImpl implements Invoice{
 	}
 
 	@Override
-	public Company getConsignment() {
+	public AbstractCompany getConsignment() {
 		return this.consignee;
 	}
 

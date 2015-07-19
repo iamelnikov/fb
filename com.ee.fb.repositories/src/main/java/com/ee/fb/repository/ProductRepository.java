@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.ee.fb.domain.product.Product;
+import com.ee.domain.product.Product;
 
 public interface ProductRepository extends CrudRepository<Product, String> {
 	

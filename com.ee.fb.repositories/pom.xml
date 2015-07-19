@@ -10,6 +10,14 @@
 		<relativePath>../com.ee.fb.pom/pom.xml</relativePath>
 	</parent>
 	<dependencies>
+		<!-- EE Domain Interface -->
+		<dependency>
+			<groupId>com.ee</groupId>
+			<artifactId>core</artifactId>
+			<version>${project.version}</version>
+			<scope>compile</scope>
+			<type>jar</type>
+		</dependency>
 		<!-- FB Domain project -->
 		<dependency>
 			<groupId>com.ee.fb</groupId>
