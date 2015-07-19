@@ -2,7 +2,7 @@ package com.ee.fb.service.tradeplatform;
 
 import java.util.List;
 
-import com.ee.fb.domain.company.Producer;
+import com.ee.domain.company.Producer;
 
 public interface ProducerService {
 

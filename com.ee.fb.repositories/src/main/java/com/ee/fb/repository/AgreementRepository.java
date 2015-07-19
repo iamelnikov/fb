@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.ee.fb.domain.agreement.Agreement;
+import com.ee.domain.agreement.Agreement;
 
-public interface AgreementRepository extends CrudRepository<Agreement, String>{
-	public Agreement findAgreementByNumber(String number);
-	public List<Agreement> findAgreementByProducerInfoProducerId(String producerId);
+public interface AgreementRepository extends CrudRepository<Agreement<?>, String>{
+	public Agreement<?> findAgreementByNumber(String number);
+	public List<Agreement<?>> findAgreementByProducerInfoProducerId(String producerId);
 }

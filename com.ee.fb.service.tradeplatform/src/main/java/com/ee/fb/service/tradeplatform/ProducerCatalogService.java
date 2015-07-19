@@ -2,8 +2,8 @@ package com.ee.fb.service.tradeplatform;
 
 import java.util.List;
 
+import com.ee.domain.product.Product;
 import com.ee.fb.domain.core.search.Filter;
-import com.ee.fb.domain.product.Product;
 
 public interface ProducerCatalogService {
 
