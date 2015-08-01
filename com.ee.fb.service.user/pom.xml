@@ -8,4 +8,13 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../com.ee.fb.pom/pom.xml</relativePath>
 	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>com.ee</groupId>
+			<artifactId>service.mongo</artifactId>
+			<version>${project.version}</version>
+			<scope>compile</scope>
+			<type>jar</type>
+		</dependency>
+	</dependencies>
 </project>
