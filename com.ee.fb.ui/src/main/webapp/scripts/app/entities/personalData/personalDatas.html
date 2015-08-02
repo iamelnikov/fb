@@ -1,0 +1,162 @@
+<div>
+
+    <h2 translate="fbApp.personalData.home.title">PersonalDatas</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#savePersonalDataModal" ng-click="clear()">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="fbApp.personalData.home.createLabel">Create a new PersonalData</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="savePersonalDataModal" tabindex="-1" role="dialog" aria-labelledby="myPersonalDataLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myPersonalDataLabel" translate="fbApp.personalData.home.createOrEditLabel">Create or edit a PersonalData</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label translate="global.field.id">ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="personalData.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="fbApp.personalData.lastName">LastName</label>
+                            <input type="text" class="form-control" name="lastName"
+                                   ng-model="personalData.lastName">
+
+                            <div ng-show="editForm.lastName.$invalid">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="fbApp.personalData.firstName">FirstName</label>
+                            <input type="text" class="form-control" name="firstName"
+                                   ng-model="personalData.firstName">
+
+                            <div ng-show="editForm.firstName.$invalid">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="fbApp.personalData.middleName">MiddleName</label>
+                            <input type="text" class="form-control" name="middleName"
+                                   ng-model="personalData.middleName">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="fbApp.personalData.birthDate">BirthDate</label>
+                            <input type="datetime-local" class="form-control" name="birthDate"
+                                   ng-model="personalData.birthDate" ng-model-options="{timezone: 'UTC'}">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="fbApp.personalData.birthPlace">BirthPlace</label>
+                            <input type="text" class="form-control" name="birthPlace"
+                                   ng-model="personalData.birthPlace">
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deletePersonalDataConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(personalData.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="fbApp.personalData.delete.question" translate-values="{id: '{{personalData.id}}'}">Are you sure you want to delete this PersonalData?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="global.field.id">ID</th>
+                    <th translate="fbApp.personalData.lastName">LastName</th>
+                    <th translate="fbApp.personalData.firstName">FirstName</th>
+                    <th translate="fbApp.personalData.middleName">MiddleName</th>
+                    <th translate="fbApp.personalData.birthDate">BirthDate</th>
+                    <th translate="fbApp.personalData.birthPlace">BirthPlace</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="personalData in personalDatas">
+                    <td><a ui-sref="personalDataDetail({id:personalData.id})">{{personalData.id}}</a></td>
+                    <td>{{personalData.lastName}}</td>
+                    <td>{{personalData.firstName}}</td>
+                    <td>{{personalData.middleName}}</td>
+                    <td>{{personalData.birthDate}}</td>
+                    <td>{{personalData.birthPlace}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="personalDataDetail({id:personalData.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="showUpdate(personalData.id)"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(personalData.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li ng-show="links['first']" ng-click="loadPage(links['first'])"><a>&lt;&lt;</a></li>
+                <li ng-show="links['prev']" ng-click="loadPage(links['prev'])"><a>&lt;</a></li>
+                <li ng-show="page > 2" ng-click="loadPage(page - 2)"><a>{{page - 2}}</a></li>
+                <li ng-show="page > 1" ng-click="loadPage(page - 1)"><a>{{page - 1}}</a></li>
+                <li class="active"><a>{{page}}</a></li>
+                <li ng-show="page < links['last']" ng-click="loadPage(page + 1)"><a>{{page + 1}}</a></li>
+                <li ng-show="page < links['last'] - 1" ng-click="loadPage(page + 2)"><a>{{page + 2}}</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a>&gt;</a></li>
+                <li ng-show="links['last']" ng-click="loadPage(links['last'])"><a>&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

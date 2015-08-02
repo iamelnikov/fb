@@ -1,0 +1,21 @@
+{
+  "generator-jhipster": {
+    "baseName": "fb",
+    "packageName": "com.ee.fb",
+    "packageFolder": "com/ee/fb",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "spring-websocket",
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": "no",
+    "useCompass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "gulp",
+    "javaVersion": "8",
+    "enableTranslation": true,
+    "rememberMeKey": "178ec6593f3901da3b3970cb936f1b958d98e74c"
+  }
+}

@@ -1,0 +1,68 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "lastName",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "LastName",
+            "fieldNameUnderscored": "last_name",
+            "fieldInJavaBeanMethod": "LastName",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "firstName",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "FirstName",
+            "fieldNameUnderscored": "first_name",
+            "fieldInJavaBeanMethod": "FirstName",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "middleName",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "MiddleName",
+            "fieldNameUnderscored": "middle_name",
+            "fieldInJavaBeanMethod": "MiddleName",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "birthDate",
+            "fieldType": "DateTime",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "BirthDate",
+            "fieldNameUnderscored": "birth_date",
+            "fieldInJavaBeanMethod": "BirthDate",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "birthPlace",
+            "fieldType": "String",
+            "fieldIsEnum": false,
+            "fieldNameCapitalized": "BirthPlace",
+            "fieldNameUnderscored": "birth_place",
+            "fieldInJavaBeanMethod": "BirthPlace",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": true,
+    "fieldsContainDate": false,
+    "dto": "no",
+    "pagination": "pagination",
+    "validation": true
+}

@@ -1,0 +1,23 @@
+{
+    "fbApp": {
+        "personalData" : {
+            "home": {
+                "title": "PersonalDatas",
+                "createLabel": "Créer un nouveau PersonalData",
+                "createOrEditLabel": "Créer ou éditer un PersonalData"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le PersonalData {{ id }} ?"
+            },
+            "detail": {
+                "title": "PersonalData"
+            },
+            "lastName": "LastName",
+            "firstName": "FirstName",
+            "middleName": "MiddleName",
+            "birthDate": "BirthDate",
+            "birthPlace": "BirthPlace"
+        }
+    }
+}
+
